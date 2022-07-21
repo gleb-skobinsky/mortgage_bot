@@ -30,6 +30,11 @@ def get_time(update,context):
 
 def echo(update, context):
     text = update.message.text
+    if "нов" in text.lower() or "перв" in text.lower() or "застрой" in text.lower():
+        # Из-за перекоса в обучающих данных модель
+        # никогда не выбирает новостройку, если текст не начинается
+        # со слов "ставка" или "стоимость"
+        text = "Ставка и взнос " + text
     probs = predictor.predict(sentence=text)
     probab_list = probs['probs']
     label = int(probab_list.index(max(probab_list)))
