@@ -11,7 +11,7 @@ import os
 from datetime import datetime
 from filtering import get_text_from_label
 
-pwd="5563089231:AAGY8oo4Ma7WwJCwmWt7sbioPHIxL5r3nEQ"
+pwd="[TELEGRAM_BOT_PASSWORD]"
 
 archive = load_archive("mortgage_model.tar.gz")
 model = archive.model
